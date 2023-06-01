@@ -1,0 +1,31 @@
+Inicio As screen:
+    Fill: =Color.Bisque
+
+    Button2 As button:
+        Height: =113
+        OnSelect: =Navigate('Pruebas de camara')
+        Text: ="Tomar Foto"
+        Width: =293
+        X: =270
+        Y: =322
+        ZIndex: =1
+
+    Button3 As button:
+        Height: =126
+        OnSelect: =Navigate('Prueba de galeria')
+        Text: ="Subir Imagen"
+        Width: =340
+        X: =820
+        Y: =322
+        ZIndex: =2
+
+    Label1 As label:
+        Align: =Align.Center
+        Height: =150
+        Size: =50
+        Text: ="Prueba1"
+        Width: =540
+        X: =360
+        Y: =44
+        ZIndex: =3
+

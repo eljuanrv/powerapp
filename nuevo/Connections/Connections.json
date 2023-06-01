@@ -1,0 +1,20 @@
+{
+  "35a7d195-b31e-4ebb-a44a-9efd6221f5c2": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Custom Vision",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1625/1.0.1625.3226/cognitiveservicescustomvision/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_cognitiveservicescustomvision",
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_cognitiveservicescustomvision/connections/5191e206da3f4ebca2393fedea0e8a70"
+    },
+    "datasets": {},
+    "dataSources": [
+      "CustomVision"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "35a7d195-b31e-4ebb-a44a-9efd6221f5c2"
+  }
+}

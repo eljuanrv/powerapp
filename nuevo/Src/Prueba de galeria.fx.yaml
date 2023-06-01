@@ -1,0 +1,104 @@
+"'Prueba de galeria' As screen":
+    Fill: =Color.Bisque
+
+    AddMediaWithImage1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+        UploadedImage1 As image:
+            Height: =AddMediaButton1.Height
+            Image: =If(IsBlank(AddMediaButton1.Media), SampleImage, AddMediaButton1.Media)
+            ImagePosition: =ImagePosition.Fill
+            Width: =AddMediaButton1.Width
+            X: =AddMediaButton1.X
+            Y: =AddMediaButton1.Y
+            ZIndex: =2
+
+        AddMediaButton1 As addMedia:
+            Size: =25
+            X: =438
+            Y: =66
+            ZIndex: =3
+
+    boton_1 As button:
+        Height: =80
+        OnSelect: =ClearCollect(coleccion_galeria,CustomVision.ClassifyImageV2("18c027c7-2638-4cb6-9956-092ab910e595","Iteration1",UploadedImage1).predictions)
+        Size: =30
+        Text: ="scanear"
+        Width: =370
+        X: =452
+        Y: =470
+        ZIndex: =4
+
+    "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =150
+        Items: =coleccion_galeria
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =Min(104, Self.Height - 60)
+        X: =317
+        Y: =355
+        ZIndex: =5
+
+        Title2_1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.tagName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        Subtitle2_1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =Round(ThisItem.probability*100,2) & "%"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            Y: =36
+            ZIndex: =2
+
+        NextArrow2_1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="Ver los detalles del elemento"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =3
+
+        Separator2_1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =4
+
+    Button4_1 As button:
+        OnSelect: =Back()
+        Text: ="Atras"
+        X: =40
+        Y: =40
+        ZIndex: =6
+
